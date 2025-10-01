@@ -820,7 +820,7 @@ $$\%\text{GCV} = \sqrt{\exp(s_{\ln}^2) - 1} \times 100$$
 
 Where:
 
-* $\%\text{GCV}$ is the **Geometric Coefficient of Variation** (expressed as a percentage).
+* GCV is the **Geometric Coefficient of Variation** (expressed as a percentage).
 * $\exp(\dots)$ is the **exponential function** (or anti-logarithm).
 * $s_{\ln}^2$ is the **sample variance of the natural log transformed data** (the square of $s_{\ln}$, calculated using the $n-1$ denominator)
 
