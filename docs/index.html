@@ -2063,10 +2063,10 @@ Less influenced than the arithmetic mean, reflecting the central tendency of the
 <li><span class="math inline">\(s_{\ln}\)</span> is the <strong>sample standard deviation of the natural logarithm of the data</strong></li>
 </ul>
 <p>Finally, because geometric standard deviation is not all that intuitive a number (and it can’t be expressed as a <span class="math inline">\(\pm\)</span>). Variability in pharmacokinetic data is often presented as a percentage geometric coefficient of variability (often shortened to <span class="math inline">\(%CV%\)</span>). This is calcluated as follows:</p>
-<p><span class="math display">\[\%\text{GCV} = \sqrt{\exp(s_{\ln}^2) - 1} \times 100\]</span></p>
+<p><span class="math display">\[\text{%GCV} = \sqrt{\exp(s_{\ln}^2) - 1} \times 100\]</span></p>
 <p>Where:</p>
 <ul>
-<li>GCV is the <strong>Geometric Coefficient of Variation</strong> (expressed as a percentage).</li>
+<li>%GCV is the <strong>Geometric Coefficient of Variation</strong> (expressed as a percentage).</li>
 <li><span class="math inline">\(\exp(\dots)\)</span> is the <strong>exponential function</strong> (or anti-logarithm).</li>
 <li><span class="math inline">\(s_{\ln}^2\)</span> is the <strong>sample variance of the natural log transformed data</strong> (the square of <span class="math inline">\(s_{\ln}\)</span>, calculated using the <span class="math inline">\(n-1\)</span> denominator)</li>
 </ul>
@@ -2079,6 +2079,247 @@ Less influenced than the arithmetic mean, reflecting the central tendency of the
 <p>I appreciate that for some that will have been too much mathematics. To preempt the obvious question - no, I do not expect you to know and regurgitate the above calculations in an exam. The detail is provided to aid your understanding. Here is a bare bones summary:</p>
 <p><em>Many</em> pharmacokinetic parameters are <em>not</em> normally distributed. You should <em>not</em> use standard descriptive statistics like sample arithmetic mean and sample arithmetic standard deviation as estimates for true population values in these cases.</p>
 <p>Instead we can use geometric mean and geometric coefficient of variation. These statistics are useful for right skewed (log-normally distributed) data.</p>
+<table class="table table-striped table-hover table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:shaded-table">Table 2.2: </span>Comparison of arithmetic and geometric summary measures
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;font-weight: bold;background-color: #D5D5D5 !important;">
+Measure
+</th>
+<th style="text-align:left;font-weight: bold;background-color: #D5D5D5 !important;">
+Central Tendency
+</th>
+<th style="text-align:left;font-weight: bold;background-color: #D5D5D5 !important;">
+Variability Measure
+</th>
+<th style="text-align:left;font-weight: bold;background-color: #D5D5D5 !important;">
+Formula for Variability
+</th>
+<th style="text-align:left;font-weight: bold;background-color: #D5D5D5 !important;">
+Appropriate for
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Arithmetic
+</td>
+<td style="text-align:left;">
+Arithmetic Mean (<span class="math inline">\(\bar{x}\)</span> or <span class="math inline">\(\text{AM}\)</span>)
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(\text{%CV}\)</span>
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(\left( \frac{s}{\bar{x}} \right) \times 100\)</span>
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(\text{Normal}\)</span> (Symmetrical) Data
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Geometric
+</td>
+<td style="text-align:left;">
+Geometric Mean (<span class="math inline">\(\text{GM}\)</span>)
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(\text{%GCV}\)</span>
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(\sqrt{\exp(s_{\ln}^2) - 1} \times 100\)</span>
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(\text{Log-Normal}\)</span> (Skewed) Data
+</td>
+</tr>
+</tbody>
+</table>
+<table class="table table-striped table-hover table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;border-bottom: 0;">
+<caption>
+<span id="tab:both-variability-table-sd-range">Table 2.3: </span>comparison of arithmetic and geometric variability measures
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;background-color: #D5D5D5 !important;">
+domain
+</th>
+<th style="text-align:center;background-color: #D5D5D5 !important;">
+statistical parameter
+</th>
+<th style="text-align:center;background-color: #D5D5D5 !important;">
+value type
+</th>
+<th style="text-align:center;background-color: #D5D5D5 !important;">
+interpretation
+</th>
+</tr>
+</thead>
+<tbody>
+<tr grouplength="2">
+<td colspan="4" style="border-bottom: 1px solid;">
+<strong>arithmetic measures</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+arithmetic
+</td>
+<td style="text-align:center;">
+standard deviation (SD)
+</td>
+<td style="text-align:center;">
+unit of measure
+</td>
+<td style="text-align:center;">
+absolute measure of spread. the <span class="math inline">\(68\%\)</span> range is <span class="math inline">\(\text{AM} \pm 1 \cdot \text{SD}\)</span> (additive).
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+arithmetic
+</td>
+<td style="text-align:center;">
+coefficient of variation (%CV)
+</td>
+<td style="text-align:center;">
+percentage (<span class="math inline">\(\text{%}\)</span>)
+</td>
+<td style="text-align:center;">
+relative measure of spread around the AM. used for normally distributed data.
+</td>
+</tr>
+<tr grouplength="2">
+<td colspan="4" style="border-bottom: 1px solid;">
+<strong>geometric measures</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+geometric
+</td>
+<td style="text-align:center;">
+geometric standard deviation (GSD)
+</td>
+<td style="text-align:center;">
+factor (unitless, <span class="math inline">\(\text{&amp;gt;}1\)</span>)
+</td>
+<td style="text-align:center;">
+the multiplicative factor of spread. the <span class="math inline">\(68\%\)</span> range is <span class="math inline">\(\text{GM}/\text{GSD}\)</span> to <span class="math inline">\(\text{GM} \times \text{GSD}\)</span> (multiplicative).
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+geometric
+</td>
+<td style="text-align:center;">
+geometric coefficient of variation (%GCV)
+</td>
+<td style="text-align:center;">
+percentage (<span class="math inline">\(\text{%}\)</span>)
+</td>
+<td style="text-align:center;">
+relative symmetrical scatter around the geometric mean (GM). preferred for log-normal data.
+</td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td style="padding: 0; " colspan="100%">
+<span style="font-style: italic;">Note: </span> <sup></sup> AM = arithmetic mean; SD = standard deviation; %CV = percent coefficient of variation; GM = geometric mean; GSD = geometric standard deviation; %GCV = percent geometric coefficient of variation. Note: <span class="math inline">\(\pm 1 \cdot \text{SD}\)</span> typically encompasses approximately <span class="math inline">\(68\%\)</span> of data points in a normal distribution.
+</td>
+</tr>
+</tfoot>
+</table>
+<p><br></p>
+<div id="is-there-a-definition-of-a-high-amount-of-variability-in-pharmacokinetics" class="section level3" number="2.5.1">
+<h3><span class="header-section-number">2.5.1</span> Is there a definition of a ‘high’ amount of variability in pharmacokinetics?</h3>
+<p>Yes. The FDA considers a %GCV of 30% or higher in <span class="math inline">\(C_{max}\)</span> or <span class="math inline">\(AUC_{0-\infty}\)</span> to represent high inter-individual variability. This means that the drug exposure is considered to be highly variable between individuals.</p>
+<p><br></p>
+</div>
+<div id="ok-so-it-is-geometric-for-all" class="section level3" number="2.5.2">
+<h3><span class="header-section-number">2.5.2</span> OK so it is geometric for all……!</h3>
+<p>Erm. No. Sorry. Somewhat irritatingly you cannot use this principle for all of the pharmacokinetic parameters.</p>
+<p>Here is an example:</p>
+<p><span class="math inline">\(T_{max}\)</span>, the time to maximum concentration is <em>highly</em> dependent upon the sampling schedule and can <em>only</em> take the discrete values of the times samples were taken. For example, if you <em>only</em> take samples at 0.25, 0.5, 1 and 1.25 hours then <span class="math inline">\(T_{max}\)</span> can only be one of these. So for <span class="math inline">\(T_{max}\)</span> we report median and range (min-max). Sorry.</p>
+<table class="table table-striped table-hover table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;border-bottom: 0;">
+<caption>
+<span id="tab:pk-regulatory-table-subscript">Table 2.4: </span>Preferred summary statistics for key pharmacokinetic parameters (FDA)
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;font-weight: bold;background-color: #D5D5D5 !important;">
+PK Parameter
+</th>
+<th style="text-align:center;font-weight: bold;background-color: #D5D5D5 !important;">
+Underlying Distribution
+</th>
+<th style="text-align:center;font-weight: bold;background-color: #D5D5D5 !important;">
+Preferred Central Tendency
+</th>
+<th style="text-align:center;font-weight: bold;background-color: #D5D5D5 !important;">
+Preferred Variability Measure
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Area Under the Curve (AUC)
+</td>
+<td style="text-align:center;">
+Log-Normal (Skewed)
+</td>
+<td style="text-align:center;">
+<span class="math inline">\(\text{Geometric Mean (GM)}\)</span>
+</td>
+<td style="text-align:center;">
+<span class="math inline">\(\text{Geometric CV (%GCV)}\)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Maximum Concentration (C<span class="math inline">\(_{max}\)</span>)
+</td>
+<td style="text-align:center;">
+Log-Normal (Skewed)
+</td>
+<td style="text-align:center;">
+<span class="math inline">\(\text{Geometric Mean (GM)}\)</span>
+</td>
+<td style="text-align:center;">
+<span class="math inline">\(\text{Geometric CV (%GCV)}\)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Time to C<span class="math inline">\(_{max}\)</span> (T<span class="math inline">\(_{max}\)</span>)
+</td>
+<td style="text-align:center;">
+Non-Normal (Discrete)
+</td>
+<td style="text-align:center;">
+<span class="math inline">\(\text{Median}\)</span>
+</td>
+<td style="text-align:center;">
+<span class="math inline">\(\text{Range (Min - Max)}\)</span>
+</td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td style="padding: 0; " colspan="100%">
+<span style="font-style: italic;">Note:</span> <sup></sup> AUC and Cmax are summarized using geometric statistics due to their log-normal distribution. Tmax is summarized using non-parametric statistics (Median and Range) because its observed values are discrete time points.
+</td>
+</tr>
+</tfoot>
+</table>
+<p><br></p>
+</div>
 </div>
 </div>
 
