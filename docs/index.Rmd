@@ -876,7 +876,7 @@ data_both_variability_final <- tribble(
   "arithmetic", "coefficient of variation (%CV)", "percentage ($\\%$)", "relative measure of spread around the AM. used for normally distributed data.",
   # --- GEOMETRIC MEASURES ---
   "geometric", "geometric standard deviation (GSD)", "factor (unitless, $\\text{>}1$)", "the multiplicative factor of spread. the $68\\%$ range is $\\text{GM}/\\text{GSD}$ to $\\text{GM} \\times \\text{GSD}$ (multiplicative).",
-  "geometric", "geometric coefficient of variation (%GCV)", "percentage ($\\text{%}$)", "relative symmetrical scatter around the geometric mean (GM). preferred for log-normal data."
+  "geometric", "geometric coefficient of variation (%GCV)", "percentage ($\\%$)", "relative symmetrical scatter around the geometric mean (GM). preferred for log-normal data."
 )
 
 # Render the kable table with styling for HTML
