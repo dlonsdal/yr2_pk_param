@@ -831,34 +831,3 @@ I appreciate that for some that will have been too much mathematics. To preempt 
 
 _Many_ pharmacokinetic parameters are _not_ normally distributed. You should _not_ use standard descriptive statistics like sample arithmetic mean and sample arithmetic standard deviation as estimates for true population values in these cases. 
 
-Instead we can use geometric mean and geometric coefficient of variation. These statistics are useful for right skewed (log-normally distributed) data. 
-
-```{r shaded-table, results='asis', echo=FALSE}
-library(knitr)
-library(kableExtra)
-library(dplyr)
-
-# Create the data frame - Corrected to use standard math notation without LaTeX escaping
-# NOTE: The double backslashes for the math (\bar{x}) MUST remain inside the string
-data <- tribble(
-  ~Measure, ~`Central Tendency`, ~`Variability Measure`, ~`Formula for Variability`, ~`Appropriate for`,
-  "Arithmetic", "Arithmetic Mean ($\\bar{x}$ or $\\text{AM}$)", "%CV", "$\\left( \\frac{s}{\\bar{x}} \\right) \\times 100$", "$\\text{Normal}$ (Symmetrical) Data",
-  "Geometric", "Geometric Mean ($\\text{GM}$)", "%GCV", "$\\sqrt{\\exp(s_{\\ln}^2) - 1} \\times 100$", "$\\text{Log-Normal}$ (Skewed) Data"
-)
-
-# Render the kable table with shading and alignment for HTML
-data %>%
-  kbl(
-    caption = "Comparison of arithmetic and geometric summary measures",
-    booktabs = TRUE,
-    align = 'l'
-  ) %>%
-  # Apply HTML styling for the header row and hover effect
-  kable_styling(
-    bootstrap_options = c("striped", "hover", "condensed"), 
-    full_width = F
-  ) %>% 
-  # Set the background color for the header row
-  row_spec(0, background = "#D5D5D5", bold = T)
-```
-
