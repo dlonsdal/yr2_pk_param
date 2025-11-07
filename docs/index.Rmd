@@ -1107,6 +1107,14 @@ When drugs are developed as alternatives for an existing (reference) drug, for e
 
 The FDA define bioequivalence as: "The absence of a significant difference in the rate and extent to which the active ingredient becomes available at the site of drug action when administered at the same dose under similar experimental conditions"
 
+Rate is quantified usually by comparing $T_{max}$ and $C_{max}$ and extent by AUC. For example 
+$$Bioequivalence (F) = 100 .  \frac{AUC_{Test}}{AUC_{Ref}}$$
+
+Where
+
+- $Test$ is the test (new) drug product
+- $Ref$ is the established drug product
+
 <br>
 
 ```{r, eval=TRUE, echo=FALSE, message=FALSE}
